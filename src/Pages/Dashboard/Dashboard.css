@@ -1,0 +1,11 @@
+.dark-mode {
+  background-color: #000;
+  height: 100vh;
+}
+.dark-mode h1,
+.light-mode h1 {
+  padding: 50px;
+}
+.light-mode {
+  color: #fff;
+}
