@@ -23,12 +23,14 @@ const Login = () => {
           type="text"
           onChange={({ target }) => setEmail(target.value)}
           placeholder="Email"
+          autoComplete="username"
         />
         <br />
         <input
           type="password"
           onChange={({ target }) => setPassword(target.value)}
           placeholder="Password"
+          autoComplete="current-password"
         />
         <br />
         {error && (

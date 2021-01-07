@@ -19,12 +19,14 @@ const AddNumber = () => {
           type="text"
           placeholder="Name"
           onChange={({ target }) => setName(target.value)}
+          autocomplete="username"
         />
         <br />
         <input
           type="text"
           placeholder="Number"
           onChange={({ target }) => setPhone(target.value)}
+          autocomplete="username"
         />
         <br />
 
