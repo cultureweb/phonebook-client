@@ -3,6 +3,7 @@ import ListAllNumbers from "./ListAllNumbers";
 import "./Dashboard.css";
 import { ThemeContext } from "../../contexts/Context";
 import ToggleTheme from "../../components/ToggleTheme";
+import ListAllUsers from "./ListAllUsers";
 
 const Dashboard = ({ signOut }) => {
   const themeMode = useContext(ThemeContext); //dark
@@ -29,7 +30,8 @@ const Dashboard = ({ signOut }) => {
       >
         Dashboard
       </h1>
-      <ListAllNumbers isDarkMode={isDarkMode} />
+      {/* <ListAllNumbers isDarkMode={isDarkMode} /> */}
+      <ListAllUsers isDarkMode={isDarkMode} />
     </div>
   );
 };

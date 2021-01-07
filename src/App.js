@@ -17,12 +17,12 @@ import Page403 from "./Pages/ErrorPages/Page403";
 import Page404 from "./Pages/ErrorPages/Page404";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const signOut = () => {
     console.log("Signout");
     setIsLoggedIn(false);
-    history.push("/");
+    history.push("/login");
   };
 
   return (
@@ -31,10 +31,15 @@ function App() {
         <Router history={history}>
           {!isLoggedIn ? (
             <>
-              <Login />
-              {/* <Switch>
-                <Route exact path="/login" component={Login} />
-              </Switch> */}
+              {/* <Login /> */}
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => <Login setIsLoggedIn={setIsLoggedIn} />}
+                />
+                {/* <Route exact path="/" component={Login} /> */}
+              </Switch>
             </>
           ) : (
             <>
