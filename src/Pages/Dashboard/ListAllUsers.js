@@ -1,33 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Api, useUsers } from "./Api";
+import { Link } from "react-router-dom";
+import { Api } from "./Api";
+import useAsync from "react-use/lib/useAsync";
 
 // import { Link } from "react-router-dom";
 
 const ListAllUsers = ({ isDarkMode }) => {
-  const { loading: loadingUsers, data: users, error: errorUsers } = useUsers();
-  console.log({ users });
+  const { loading, value: users, error } = useAsync(Api.getUsers, []);
 
-  // const [loading, setLoading] = useState(true);
-  // const [users, setUsers] = useState([]);
-
-  // useEffect(() => {
-  //   let mounted = true;
-  //   async function fetchData() {
-  //     const usersList = await Api.getUsers();
-  //     if (mounted) {
-  //       setLoading(false);
-  //     }
-  //     console.log("test", usersList[0].role);
-  //     setUsers(usersList);
-  //   }
-  //   fetchData();
-  // }, []);
-  if (!users) {
+  if (loading) {
     return "loading...";
+  }
+  if (error) {
+    return <p>{error.message}</p>;
   }
 
   return (
     <div>
+      <Link to="/add-user">
+        <p className={isDarkMode ? "light-mode" : ""}>Add a New User</p>
+      </Link>
       <h2 className={isDarkMode ? "light-mode" : ""}>
         List of users in database
       </h2>{" "}

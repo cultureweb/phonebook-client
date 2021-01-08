@@ -10,7 +10,7 @@ import { ThemeContext } from "./contexts/Context";
 import Login from "./Pages/Login/Login";
 
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import AddNumber from "./Pages/Dashboard/AddNumber";
+import AddUser from "./Pages/Dashboard/AddUser";
 import NotFound from "./Pages/Notfound/NotFound";
 import Page401 from "./Pages/ErrorPages/Page401";
 import Page403 from "./Pages/ErrorPages/Page403";
@@ -56,7 +56,7 @@ function App() {
                 <Route exact path="/401" component={Page401} />
                 <Route exact path="/403" component={Page403} />
                 <Route exact path="/404" component={Page404} />
-                <Route exact path="/add-number" component={AddNumber} />
+                <Route exact path="/add-user" component={AddUser} />
                 <Route exact path="/*" component={NotFound} />
               </Switch>
             </>
