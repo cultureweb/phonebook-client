@@ -13,7 +13,7 @@ const Login = ({ setIsLoggedIn }) => {
   const [error, setError] = useState("");
 
   async function loginUser(email, password) {
-    return fetch(`${baseURL}auth/login`, {
+    return fetch(`${baseURL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
