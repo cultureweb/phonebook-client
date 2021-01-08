@@ -4,13 +4,16 @@ import history from "../../history";
 // import PropTypes from "prop-types";
 // import "./Login.css";
 
+//const baseURL = "http://localhost:42001/api/v1";
+const baseURL = "https://phonebook-server-api.herokuapp.com/api/v1";
+
 const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [error, setError] = useState("");
 
   async function loginUser(email, password) {
-    return fetch("http://localhost:42001/api/v1/auth/login", {
+    return fetch(`${baseURL}auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

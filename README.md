@@ -14,6 +14,10 @@ To connect your local project files to your Firebase project, run the following 
 
 ### Step 3: Deploy your project
 
+=== Hosting Setup
+`firebase init` then `hosting`
+What do you want to use as your public directory? **build**
+
 ```
 yarn build
 firebase deploy
