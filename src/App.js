@@ -7,10 +7,11 @@ import history from "./history";
 import { ThemeContext } from "./contexts/Context";
 
 // Pages
-import Login from "./Pages/Login/Login";
+import Login from "./auth/Login";
 
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import AddUser from "./Pages/Dashboard/AddUser";
+import AddUser from "./components/AddUser";
+import User from "./components/User";
 import NotFound from "./Pages/Notfound/NotFound";
 import Page401 from "./Pages/ErrorPages/Page401";
 import Page403 from "./Pages/ErrorPages/Page403";
@@ -57,6 +58,7 @@ function App() {
                 <Route exact path="/403" component={Page403} />
                 <Route exact path="/404" component={Page404} />
                 <Route exact path="/add-user" component={AddUser} />
+                <Route exact path="/users/:id" component={User} />
                 <Route exact path="/*" component={NotFound} />
               </Switch>
             </>
