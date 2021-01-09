@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { baseURL } from "../config/config";
 import history from "../history";
 
 // import PropTypes from "prop-types";
 
 //const baseURL = "http://localhost:42001/api/v1";
-const baseURL = "https://phonebook-server-api.herokuapp.com/api/v1";
+//const baseURL = "https://phonebook-server-api.herokuapp.com/api/v1";
 
 const Login = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState();
@@ -24,8 +25,6 @@ const Login = ({ setIsLoggedIn }) => {
         return error;
       } else {
         const data = await res.json();
-        setIsLoggedIn(true);
-        history.push("/");
         if (
           data &&
           data.tokens &&
@@ -36,6 +35,8 @@ const Login = ({ setIsLoggedIn }) => {
           localStorage.setItem("token", "Bearer " + token);
           return token;
         }
+        setIsLoggedIn(true);
+        history.push("/");
       }
     });
   }
