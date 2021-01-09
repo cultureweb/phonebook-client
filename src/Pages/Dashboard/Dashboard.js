@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import ListAllNumbers from "./ListAllNumbers";
 import "./Dashboard.css";
 import { ThemeContext } from "../../contexts/Context";
 import ToggleTheme from "../../components/ToggleTheme";
@@ -30,7 +29,6 @@ const Dashboard = ({ signOut }) => {
       >
         Dashboard
       </h1>
-      {/* <ListAllNumbers isDarkMode={isDarkMode} /> */}
       <ListAllUsers isDarkMode={isDarkMode} />
     </div>
   );

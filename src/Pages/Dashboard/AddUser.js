@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Api } from "./Api";
+
 const AddUser = () => {
   const [name, setName] = useState();
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
-  const [role, setRole] = useState();
+  const [role, setRole] = useState("user");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    Api.createUser(name, email, password, role);
     console.log(`submitted: ${name} - ${email} -${password} -${role}`);
   };
 
@@ -35,11 +37,32 @@ const AddUser = () => {
           onChange={({ target }) => setEmail(target.value)}
         />
         <br />
-        <input
-          type="text"
-          placeholder="user"
-          onChange={({ target }) => setRole(target.value)}
-        />
+        <div>
+          <label>
+            User
+            <input
+              type="radio"
+              id="user"
+              name="role"
+              value="user"
+              checked={true}
+              onChange={() => setRole("user")}
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Admin
+            <input
+              type="radio"
+              id="admin"
+              name="role"
+              value="admin"
+              onChange={() => setRole("admin")}
+            />
+          </label>
+        </div>
         <br />
         <button type="submit">Submit</button>
       </form>
