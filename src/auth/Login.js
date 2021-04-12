@@ -33,9 +33,11 @@ const Login = ({ setIsLoggedIn }) => {
         ) {
           const token = data.tokens.access.token;
           localStorage.setItem("token", "Bearer " + token);
+
+          setIsLoggedIn(true);
           return token;
         }
-        setIsLoggedIn(true);
+
         history.push("/");
       }
     });
