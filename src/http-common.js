@@ -1,13 +1,18 @@
 import axios from "axios";
-import { baseURL } from "./config/config";
+import { API_URL } from "./config/config";
+
+let defaultOptions;
 
 // Default config options
-const defaultOptions = {
-  baseURL,
-  //baseURL: "http://localhost:42001/api/v1",
+defaultOptions = {
+  baseURL: API_URL,
+
   headers: {
     "Content-Type": "application/json",
     Authorization: localStorage.getItem("token"),
+
+    // Authorization: token ? `Bearer ${token}` : "",
+    // "x-access-token": localStorage.getItem("token"),
   },
 };
 
