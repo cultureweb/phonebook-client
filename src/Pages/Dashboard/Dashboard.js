@@ -12,6 +12,10 @@ import {
   Menu,
   MenuItem,
   Avatar,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
 } from "@material-ui/core";
 
 import {
@@ -249,6 +253,19 @@ const Dashboard = (props) => {
         </AppBar>
         {renderMobileMenu}
         {renderMenu}
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title">Create Form</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Creating a new empty form, just add form name and description if
+              you want.
+            </DialogContentText>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
